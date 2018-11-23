@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\TicketFormRequest;
+
+use App\Ticket;
+
 class TicketsController extends Controller
 {
     /**
@@ -32,9 +36,17 @@ class TicketsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TicketFormRequest $request)
     {
-        //
+        $slug = uniqid();
+        $ticket = new Ticket(array(
+            'title' => $request->get('title'),
+            'content' => $request->get('content'),
+            'slug' => sha1($slug)            
+        ));
+        
+        $ticket->save();
+        return redirect('/contact')->with('status', 'your ticket has been created! Its unique ID is'. $slug);
     }
 
     /**

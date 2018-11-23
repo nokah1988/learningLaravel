@@ -18,7 +18,13 @@ Route::get('/', function () {
 // pages controller
 Route::get('/about', 'PagesController@about');
 //Route::get('/contact', 'PagesController@contact');
+
+
 Route::get('/contact', 'TicketsController@create');
+Route::post('/contact', 'TicketsController@store');
+
+
+
 Route::get('/blog', 'PagesController@blog');
 
 
