@@ -24,8 +24,8 @@ class TicketFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'     => 'required|min:3',
-            'content'   => 'required|min:10'
+            'title' => 'required|min:3',
+            'content'=> 'required|min:10',
         ];
     }
 }

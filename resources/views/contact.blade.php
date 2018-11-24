@@ -1,9 +1,11 @@
-@extends('layouts.app')
+@extends('master')
+@section('title', 'Contact')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <h1>this is the contact page</h1>
+    <div class="container">
+        <div class="content">
+            <div class="title">Contact Page</div>
+            <div class="quote">Our contact page!</div>
+        </div>
     </div>
-</div>
 @endsection
